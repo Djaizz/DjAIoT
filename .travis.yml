@@ -1,0 +1,5 @@
+before_install:
+  - python3 -m pip install --upgrade PIP
+
+install:
+  - python3 -m pip install --upgrade -e .
