@@ -1,0 +1,2 @@
+# DJANGO
+Django >= 3.2
