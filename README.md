@@ -1,1 +1,1 @@
-# Artificial Intelligence AI in Django Apps
+# Artificial Intelligence in Django Apps
