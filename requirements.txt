@@ -1,3 +1,9 @@
+# DATA PROCESSING
+NumPy >= 1.20.2
+Pandas >= 1.2.4
+PyArrow >= 3.0.0
+
+
 # DJANGO
 Django >= 3.2
 
