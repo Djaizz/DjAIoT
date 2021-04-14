@@ -27,11 +27,11 @@ _PROCFILE_NAME = 'Procfile'
 
 def run_command_with_config_file(
         command: str,
-        djai_config_file_path: str,
+        djai_config_file_path: Optional[str] = None,
         copy_standard_files: bool = False,
         asgi: Optional[str] = None):
-    djai_config_file_path = \
-        Path(djai_config_file_path).expanduser()
+    if djai_config_file_path:
+        djai_config_file_path = Path(djai_config_file_path).expanduser()
 
     # verify config file is valid
     config = parse_config_file(path=djai_config_file_path)
