@@ -4,4 +4,4 @@ from .numpy import NumPyArray, NamedNumPyArray
 from .pandas import PandasDataFrame, NamedPandasDataFrame
 from .parquet import ParquetDataSet, NamedParquetDataSet
 from .csv import CSVDataSet, NamedCSVDataSet
-from .tf_record import TFRecordDataSet, TFRecordDataSet
+from .tf_record import TFRecordDataSet, NamedTFRecordDataSet
