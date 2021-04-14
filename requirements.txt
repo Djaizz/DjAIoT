@@ -20,7 +20,8 @@ Django-Taggit >= 1.3.0
 DjangoRESTFramework >= 3.12.4
 CoreAPI >= 2.3.3
     # closely related to Django REST Framework
-DjangoRESTFramework-JSONAPI >= 4.1.0
+# DjangoRESTFramework-JSONAPI >= 4.1.0
+    # djangorestframework-jsonapi 4.1.0 depends on django<3.2 and >=2.2
 
 # Django Filtering
 Django-Filter >= 2.4.0
@@ -45,14 +46,14 @@ Django-CORS-Headers >= 3.7.0
 Daphne >= 3.0.2
 Hypercorn >= 0.11.2
 Uvicorn >= 0.13.4
-HTTPTools >= 0.1.1
+HTTPTools >= 0.1.1; python_version < '3.9'
     # required by Uvicorn
 Uvloop >= 0.15.2
     # required by Uvicorn
 
 
 # DATABASE CONNECTORS/DRIVERS
-MySQLClient >= 2.0.3
+MySQLClient >= 2.0.3; python_version < '3.9'
 PsycoPG2-binary >= 2.8.6
 
 
@@ -68,4 +69,4 @@ Tqdm >= 4.60.0
 
 # CLOUD
 # AWS Elastic Beanstalk
-AWSEBCLI >= 3.19.4
+# AWSEBCLI >= 3.19.4
