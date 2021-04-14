@@ -1,5 +1,5 @@
 import json
-from setuptools import find_namespace_packages, setup
+from setuptools import find_packages, setup
 from types import SimpleNamespace
 
 
@@ -18,7 +18,7 @@ setup(
     maintainer_email=metadata.AUTHOR_EMAIL,
     url=metadata.URL,
     download_url=metadata.DOWNLOAD_URL,
-    packages=find_namespace_packages(include=['djai.*']),
+    packages=find_packages(where='src', exclude=(), include=['djai.*']),
     py_modules=[],
     scripts=['djai/util/cli/djai',
              'djai/util/cli/aws-eb/djai-aws'],
@@ -32,5 +32,5 @@ setup(
     extras_require={},
     python_requires='>= 3.7',
     setup_requires=[],
-    namespace_packages=['djai']
+    namespace_packages=[]
 )
