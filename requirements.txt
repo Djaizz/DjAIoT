@@ -4,6 +4,13 @@ Pandas >= 1.2.4
 PyArrow >= 3.0.0
 
 
+# MACHINE LEARNING
+Auto-SKLearn >= 0.12.5
+SciKit-Learn >= 0.24.1
+Keras >= 2.4.3
+Torch >= 1.8.1
+
+
 # DJANGO
 Django >= 3.2
 

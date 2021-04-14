@@ -1,3 +1,5 @@
 from ..models import (
-    AIModel
+    AIModel,
+    SKLModel,
+    KerasModel, TFModel, TorchModel
 )
