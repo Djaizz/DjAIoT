@@ -173,7 +173,7 @@ class _NamedDataSet(Model):
         return f'"{self.name}" {type(self).__name__}'
 
 
-class _FileStoredDataSet(DataSet):
+class _FileStoredDataSet(Model):
     path = \
         CharField(
             verbose_name='Data Set Path/URL',
@@ -216,7 +216,7 @@ class _FileStoredDataSet(DataSet):
             # validators=None
         )
 
-    class Meta(DataSet.Meta):
+    class Meta:
         abstract = True
 
     def __str__(self) -> str:
