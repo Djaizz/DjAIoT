@@ -1,12 +1,13 @@
 from git.exc import InvalidGitRepositoryError
 from git.repo.base import Repo
 import os
+from typing import Optional
 
 
 _GIT_HASH_FILE_NAME = '.git-hash'
 
 
-def get_git_repo_head_commit_hash(path=None):
+def get_git_repo_head_commit_hash(path: Optional[str] = None):
     try:
         repo = Repo(path=path,
                     search_parent_directories=True,
