@@ -7,7 +7,7 @@ from typing import Optional
 _GIT_HASH_FILE_NAME = '.git-hash'
 
 
-def get_git_repo_head_commit_hash(path: Optional[str] = None):
+def get_git_repo_head_commit_hash(path: Optional[str] = None) -> str:
     try:
         repo = Repo(path=path,
                     search_parent_directories=True,
