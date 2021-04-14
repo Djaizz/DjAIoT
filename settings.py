@@ -25,6 +25,10 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
+    # Django Admin Themes: add to INSTALLED_APPS before django.contrib.admin
+    'jazzmin',
+
+    # Django Default/Main Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -32,6 +36,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Django Extensions: Extra Management Commands
+    'django_extensions',
+
+    # Django REST Framework UI Templates
+    'rest_framework',
+
+    # CORS Headers
+    'corsheaders',
+
+    # Query Profiling
+    'silk',
+
+    # DjAI Modules
     'djai.data',
     'djai.model'
 ]
