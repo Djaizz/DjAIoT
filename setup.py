@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from types import SimpleNamespace
 
 
-metadata = SimpleNamespace(**json.load(open('metadata.json')))
+metadata = SimpleNamespace(**json.load(open('src/djai/metadata.json')))
 
 
 setup(
