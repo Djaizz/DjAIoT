@@ -6,3 +6,7 @@ __pycache__/
 
 # Visual Studio Code
 .vscode/
+
+
+# DB files
+*.sqlite3
