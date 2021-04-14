@@ -85,11 +85,11 @@ PARSER.add_argument(
         # when this argument is encountered at the command line.
         # choices: 'store', 'store_const'/'store_true'/'store_false',
         # 'append'/'append_const', 'count', 'help', 'version'
-    nargs=None,
+    nargs='?',
         # The number of command-line arguments that should be consumed.
     const=None,
         # A constant value required by some action and nargs selections.
-    default=argparse.SUPPRESS,
+    default=None,
         # The value produced if the argument is absent from the command line.
     type=str,
         # The type to which the command-line argument should be converted.
