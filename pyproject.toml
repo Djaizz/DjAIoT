@@ -5,7 +5,7 @@ version = "0.0.0.dev0"
 description = "Artificial Intelligence in Django Apps"
 readme = "README.md"
 
-requires-python = ">= 3.7"
+requires-python = ">= 3.8"
 license = {file = "LICENSE"}
 
 authors = [
