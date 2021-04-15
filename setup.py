@@ -28,7 +28,7 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    install_requires=open('requirements.txt').readlines(),
+    install_requires=open('src/requirements.txt').readlines(),
     entry_points={},
     extras_require={},
     python_requires='>= 3.8',
