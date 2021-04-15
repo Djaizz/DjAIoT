@@ -2,6 +2,7 @@
 # https://docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb3-deploy.html
 
 # Python
+*.egg-info/
 .mypy_cache/
 __pycache__/
 *.pyc
