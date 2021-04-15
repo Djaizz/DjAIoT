@@ -2,10 +2,10 @@ from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from django.core.asgi import get_asgi_application
 
+from importlib.util import module_from_spec, spec_from_file_location
 import os
 from pathlib import Path
 from ruamel import yaml
-import sys
 from typing import Optional
 
 
@@ -64,10 +64,13 @@ def parse_config_file(path: Optional[str] = None):
 
 
 def config_app(app_dir_path: str, config_file_path: str, asgi: bool = False):
-    sys.path.append(
-        str(Path(app_dir_path).resolve())   # must be string, absolute path
-    )
-    import settings as _settings
+    # docs.python.org/3/library/importlib.html#importing-a-source-file-directly
+    import_spec = \
+        spec_from_file_location(
+            name='settings',
+            location=Path(app_dir_path) / 'settings.py')
+    _settings = module_from_spec(spec=import_spec)
+    import_spec.loader.exec_module(module=_settings)
 
     config = parse_config_file(path=config_file_path)
     _settings.DATABASES['default'] = config['db']
