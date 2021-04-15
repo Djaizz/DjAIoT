@@ -75,6 +75,7 @@ JobLib >= 1.0.1
 
 
 # OTHER
+CLICK >= 7.1.2
 GitPython >= 3.1.14
 Ruamel.YAML >= 0.17.4
 Tqdm >= 4.60.0
