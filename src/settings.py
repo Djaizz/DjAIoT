@@ -50,7 +50,8 @@ INSTALLED_APPS = [
 
     # DjAI Modules
     'djai.data',
-    'djai.model'
+    'djai.model',
+    'djai.trust'
 ]
 
 MIDDLEWARE = [
