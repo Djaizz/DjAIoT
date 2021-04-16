@@ -48,8 +48,8 @@ def parse_config_file(path: Optional[str] = None):
                         NAME=db_name,
                         HOST=db_host,
                         PORT=(5432
-                                if db_engine == 'postgresql'
-                                else (3306
+                              if db_engine == 'postgresql'
+                              else (3306
                                     if db_engine == 'mysql'
                                     else None)),
                         USER=db_user,
