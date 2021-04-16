@@ -18,49 +18,44 @@ def parse_config_file(path: Optional[str] = None):
                 'DJAI_CONFIG_FILE_PATH',
                 _DJAI_CONFIG_FILE_NAME)
 
-    if os.path.isfile(path):
-        # parse whole YAML config file
-        config = yaml.safe_load(stream=open(path))
+    assert os.path.isfile(path), \
+        FileNotFoundError(f'*** CONFIG FILE {path} NOT FOUND ***')
 
-        # read and adjust DB config section
-        db_config = config.get('db')
-        assert db_config, f'*** "db" KEY NOT FOUND IN {config} ***'
+    # parse whole YAML config file
+    config = yaml.safe_load(stream=open(path))
 
-        db_engine = db_config.get('engine')
-        assert db_engine, f'*** "engine" KEY NOT FOUND IN {db_config} ***'
-        assert db_engine in ('postgresql', 'mysql', 'sqlite3'), \
-            ValueError(f'*** "{db_engine}" DATABASE ENGINE NOT SUPPORTED ***')
+    # read and adjust DB config section
+    db_config = config.get('db')
+    assert db_config, f'*** "db" KEY NOT FOUND IN {config} ***'
 
-        db_name = db_config.get('name')
-        assert db_name, f'*** "name" KEY NOT FOUND IN {db_config} ***'
+    db_engine = db_config.get('engine')
+    assert db_engine, f'*** "engine" KEY NOT FOUND IN {db_config} ***'
+    assert db_engine in ('postgresql', 'mysql', 'sqlite3'), \
+        ValueError(f'*** "{db_engine}" DATABASE ENGINE NOT SUPPORTED ***')
 
-        db_host = db_config.get('host')
-        db_user = db_config.get('user')
-        db_password = db_config.get('password')
-        if db_engine != 'sqlite3':
-            assert db_host, f'*** HOST NOT FOUND IN {db_config} ***'
-            assert db_user, f'*** USER NOT FOUND IN {db_config} ***'
-            assert db_password, f'*** PASSWORD NOT FOUND IN {db_config} ***'
+    db_name = db_config.get('name')
+    assert db_name, f'*** "name" KEY NOT FOUND IN {db_config} ***'
 
-        config['db'] = dict(ENGINE=f'django.db.backends.{db_engine}',
-                            NAME=db_name,
-                            HOST=db_host,
-                            PORT=(5432
-                                  if db_engine == 'postgresql'
-                                  else (3306
-                                        if db_engine == 'mysql'
-                                        else None)),
-                            USER=db_user,
-                            PASSWORD=db_password)
+    db_host = db_config.get('host')
+    db_user = db_config.get('user')
+    db_password = db_config.get('password')
+    if db_engine != 'sqlite3':
+        assert db_host, f'*** HOST NOT FOUND IN {db_config} ***'
+        assert db_user, f'*** USER NOT FOUND IN {db_config} ***'
+        assert db_password, f'*** PASSWORD NOT FOUND IN {db_config} ***'
 
-        return config
+    config['db'] = dict(ENGINE=f'django.db.backends.{db_engine}',
+                        NAME=db_name,
+                        HOST=db_host,
+                        PORT=(5432
+                                if db_engine == 'postgresql'
+                                else (3306
+                                    if db_engine == 'mysql'
+                                    else None)),
+                        USER=db_user,
+                        PASSWORD=db_password)
 
-    else:
-        # return blank config per template
-        return yaml.safe_load(
-                stream=open(Path(__file__).parent /
-                            'cli' /
-                            f'{_DJAI_CONFIG_FILE_NAME}.template'))
+    return config
 
 
 def config_app(app_dir_path: str, config_file_path: str, asgi: bool = False):
