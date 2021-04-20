@@ -6,6 +6,11 @@ from types import SimpleNamespace
 metadata = SimpleNamespace(**json.load(open('src/djai/metadata.json')))
 
 
+doc_requirements = open('requirements-doc.txt').readlines()
+lint_requirements = open('requirements-lint.txt').readlines()
+pkg_requirements = open('requirements-pkg.txt').readlines()
+
+
 # setuptools.readthedocs.io/en/latest/references/keywords.html
 setup(
     name=metadata.PACKAGE,
@@ -31,7 +36,12 @@ setup(
     zip_safe=False,
     install_requires=open('src/requirements.txt').readlines(),
     entry_points={},
-    extras_require={},
+    extras_require={
+        'doc': doc_requirements,
+        'lint': lint_requirements,
+        'pkg': pkg_requirements,
+        'dev': doc_requirements + lint_requirements + pkg_requirements
+    },
     python_requires='>= 3.8',
     setup_requires=[],
     namespace_packages=[]
