@@ -37,6 +37,8 @@ setup(
     install_requires=open('src/requirements.txt').readlines(),
     entry_points={},
     extras_require={
+        'all': [],
+
         'doc': doc_requirements,
         'lint': lint_requirements,
         'pkg': pkg_requirements,

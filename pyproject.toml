@@ -151,6 +151,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+all = []
+
 doc = [
   "Sphinx >= 3.5.4",
 
