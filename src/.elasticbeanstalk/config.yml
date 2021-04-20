@@ -1,12 +1,12 @@
 branch-defaults:
   default:
-    environment: Test-Django-AI
+    environment: Test-DjAI
     group_suffix: null
   main:
-    environment: Test-Django-AI
+    environment: Test-DjAI
     group_suffix: null
   master:
-    environment: Test-Django-AI
+    environment: Test-DjAI
     group_suffix: null
 global:
   application_name: Django-AI
