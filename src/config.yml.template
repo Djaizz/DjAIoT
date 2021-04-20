@@ -12,4 +12,4 @@ aws:
   region: ~
   vpc: ~
   subnets: ~
-  instance-type: ~
+  instance-type: t3.medium   # need at least 4GB RAM
