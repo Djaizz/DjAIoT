@@ -1,10 +1,10 @@
 Flit >= 3.2.0
 PIP >= 21.0.1
 PIPEnv >= 2020.11.15
-Poetry >= 1.1.5
+Poetry >= 1.1.6
 # PyEnv >= 0.0.1
   # not installable with pip
 SetUpTools >= 56.0.0
 TOML >= 0.10.2
-VirtualEnv >= 20.4.3
+VirtualEnv >= 20.4.4
 Wheel >= 0.36.2
