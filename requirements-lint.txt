@@ -7,5 +7,3 @@ PyCodeStyle >= 2.7.0
 PyDocStyle >= 6.0.0
 PyLama >= 7.7.1
 PyLint >= 2.7.4
-
-# Packaging & Publishing
