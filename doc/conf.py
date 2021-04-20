@@ -32,6 +32,29 @@ release = '0.0.0.dev3'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autodoc',   # Include documentation from docstrings
+    'sphinx.ext.autosectionlabel',   # Allow reference sections using its title
+    'sphinx.ext.autosummary',   # Generate autodoc summaries
+
+    'sphinx.ext.coverage',   # Collect doc coverage stats
+    'sphinx.ext.doctest',   # Test snippets in the documentation
+    'sphinx.ext.duration',   # Measure durations of Sphinx processing
+    'sphinx.ext.extlinks',   # Markup to shorten external links
+    'sphinx.ext.githubpages',   # Publish HTML docs in GitHub Pages
+    'sphinx.ext.graphviz',   # Add Graphviz graphs
+    'sphinx.ext.ifconfig',   # Include content based on configuration
+    'sphinx.ext.imgconverter',   # reference image converter using Imagemagick
+    'sphinx.ext.inheritance_diagram',   # Include inheritance diagrams
+    'sphinx.ext.intersphinx',   # Link to other projects’ documentation
+    'sphinx.ext.linkcode',   # Add external links to source code
+
+    'sphinx.ext.imgmath',   # Render math as images
+    'sphinx.ext.mathjax',   # Render math via JavaScript
+    'sphinx.ext.jsmath',   # Render math via JavaScript
+
+    'sphinx.ext.napoleon',   # Support for NumPy and Google style docstrings
+    'sphinx.ext.todo',   # Support for todo items
+    'sphinx.ext.viewcode'   # Add links to highlighted source code
 ]
 
 # Add any paths that contain templates here, relative to this directory.
