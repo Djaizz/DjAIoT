@@ -6,6 +6,7 @@ __pycache__/
 
 # Visual Studio Code
 .vscode/
+*.code-workspace
 
 
 # DB files
