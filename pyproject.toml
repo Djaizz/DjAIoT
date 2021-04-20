@@ -154,7 +154,9 @@ dependencies = [
 all = []
 
 doc = [
+  # Sphinx & related
   "Sphinx >= 3.5.4",
+  "Sphinx-AutoBuild >= 2021.3.14",
 
   # Markdown
   "CommonMark >= 0.9.1",
