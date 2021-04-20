@@ -76,7 +76,7 @@ def run_command_with_config_file(
     os.system(
         (''
          if copy_standard_files
-         else f'djai_config_file_path={djai_config_file_path} ')
+         else f'DJAI_CONFIG_FILE_PATH={djai_config_file_path} ')
         + command)
 
     if copy_standard_files:
