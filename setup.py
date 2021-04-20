@@ -6,6 +6,7 @@ from types import SimpleNamespace
 metadata = SimpleNamespace(**json.load(open('src/djai/metadata.json')))
 
 
+# setuptools.readthedocs.io/en/latest/references/keywords.html
 setup(
     name=metadata.PACKAGE,
     version=metadata.VERSION,
