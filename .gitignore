@@ -4,6 +4,10 @@ __pycache__/
 *.pyc
 
 
+# Sphinx Documentation
+*.rst
+
+
 # Visual Studio Code
 .vscode/
 *.code-workspace
