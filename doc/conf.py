@@ -5,6 +5,10 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 
+from datetime import date
+import djai
+
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -19,12 +23,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'DjAI'
-copyright = '2021, Vinh Luong'
-author = 'Vinh Luong'
+project = djai.metadata.PACKAGE
+author = djai.metadata.AUTHOR
+copyright = f'{date.today().year}, {author}'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.0.dev3'
+release = djai.__version__
 
 
 # -- General configuration ---------------------------------------------------
