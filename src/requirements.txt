@@ -83,4 +83,4 @@ Tqdm >= 4.60.0
 
 # CLOUD
 # AWS Elastic Beanstalk
-# AWSEBCLI >= 3.19.4
+AWSEBCLI >= 3.19.4
