@@ -1,1 +1,3 @@
+include src/djai/metadata.json
+
 recursive-exclude **/*.pyc

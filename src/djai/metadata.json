@@ -1,6 +1,6 @@
 {
   "PACKAGE": "DjAI",
-  "VERSION": "0.0.0.dev2",
+  "VERSION": "0.0.0.dev3",
   "DESCRIPTION": "Artificial Intelligence in Django Apps",
 
   "AUTHOR": "Vinh Luong",
