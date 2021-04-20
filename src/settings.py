@@ -23,7 +23,11 @@ SECRET_KEY = '???'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1', 'localhost',
+    '.elasticbeanstalk.com',
+    '.ngrok.io'
+]
 
 
 # Application definition
@@ -60,6 +64,16 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # CorsMiddleware should be placed as high as possible,
+    # especially before any middleware that can generate responses
+    # such as Django’s CommonMiddleware or Whitenoise’s WhiteNoiseMiddleware.
+    # If it is not before, it will not be able to add the CORS headers
+    # to these responses.
+    # Also if you are using CORS_REPLACE_HTTPS_REFERER it should be placed
+    # before Django’s CsrfViewMiddleware.
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -120,9 +134,96 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files
-STATIC_URL = '/static/'
+STATIC_ROOT = '.staticfiles'
+STATIC_URL = '/static/'   # must end with a slash
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.fields.AutoField'
+
+
+# Jazzmin Admin
+JAZZMIN_SETTINGS = dict(
+    # UI Customizer
+    # Jazzmin has a built in UI configurator,
+    # mimicked + enhanced from adminlte demo,
+    # that allows you to customise parts of the interface interactively.
+    # There will be an icon in the top right of the screen
+    # that allows you to customise the interface.
+    show_ui_builder=True,
+
+    # title of the window
+    site_title='Django AI',
+
+    # Title on the brand, and the login screen (19 chars max)
+    site_header='Django AI',
+
+    # Welcome text on the login screen
+    welcome_sign='Welcome to Django AI',
+
+    # Copyright on the footer
+    copyright='Django AI'
+)
+
+
+# REST Framework
+REST_FRAMEWORK = dict(
+    DEFAULT_AUTHENTICATION_CLASSES=[
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
+    ],
+
+    DEFAULT_PERMISSION_CLASSES=[
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+
+    DEFAULT_FILTER_BACKENDS=[
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework_filters.backends.ComplexFilterBackend',
+        'rest_framework_filters.backends.RestFrameworkFilterBackend'
+    ],
+
+    DEFAULT_PAGINATION_CLASS='rest_framework.pagination.LimitOffsetPagination',
+    PAGE_SIZE=10,
+
+    DEFAULT_RENDERER_CLASSES=[
+        # 'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework.renderers.CoreJSONRenderer',
+        'rest_framework.renderers.JSONRenderer'
+    ]
+)
+
+
+# CORS Headers
+CORS_ALLOW_ALL_ORIGINS = CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = ['*']
+
+
+# Uploads
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10 ** 9   # ~1GB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 0   # save all uploaded files to disk
+
+
+# Silky Query Profiling Settings
+# SILKY_PYTHON_PROFILER = True
+# SILKY_PYTHON_PROFILER_BINARY = True
+
+SILKY_INTERCEPT_PERCENT = 100
+SILKY_MAX_RECORDED_REQUESTS = 10 ** 3
+SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 100
+
+SILKY_MAX_REQUEST_BODY_SIZE = -1   # Silk takes anything < 0 as no limit
+SILKY_MAX_RESPONSE_BODY_SIZE = -1   # If response body > ? kb, ignore
+
+SILKY_META = True
+
+SILKY_STORAGE_CLASS = 'silk.storage.ProfilerResultStorage'
+# SILKY_PYTHON_PROFILER_RESULT_PATH = '/path/to/profiles/'
+
+SILKY_AUTHENTICATION = True   # User must login
+SILKY_AUTHORISATION = True   # User must have permissions
+
+SILKY_ANALYZE_QUERIES = True
