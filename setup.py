@@ -34,5 +34,5 @@ setup(
     extras_require={},
     python_requires='>= 3.8',
     setup_requires=[],
-    namespace_packages=[]
+    namespace_packages=['djai']
 )
