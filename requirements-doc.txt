@@ -1,1 +1,6 @@
 Sphinx >= 3.5.4
+
+# Markdown
+CommonMark >= 0.9.1
+MyST-Parser >= 0.13.6
+ReCommonMark >= 0.7.1
