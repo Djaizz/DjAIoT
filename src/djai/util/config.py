@@ -9,13 +9,14 @@ from ruamel import yaml
 from typing import Optional
 
 
+_DJAI_CONFIG_FILE_PATH_ENVVAR_NAME = 'DJAI_CONFIG_FILE_PATH'
 _DJAI_CONFIG_FILE_NAME = '.config.yml'
 
 
 def parse_config_file(path: Optional[str] = None):
     if path is None:
         path = os.environ.get(
-                'DJAI_CONFIG_FILE_PATH',
+                _DJAI_CONFIG_FILE_PATH_ENVVAR_NAME,
                 _DJAI_CONFIG_FILE_NAME)
 
     assert os.path.isfile(path), \

@@ -3,7 +3,10 @@ from pathlib import Path
 import shutil
 from typing import Optional
 
-from ..config import _DJAI_CONFIG_FILE_NAME, parse_config_file
+from ..config import (
+    _DJAI_CONFIG_FILE_PATH_ENVVAR_NAME, _DJAI_CONFIG_FILE_NAME,
+    parse_config_file
+)
 from ..git import _GIT_HASH_FILE_NAME, get_git_repo_head_commit_hash
 
 
@@ -76,7 +79,7 @@ def run_command_with_config_file(
     os.system(
         (''
          if copy_standard_files
-         else f'DJAI_CONFIG_FILE_PATH={djai_config_file_path} ')
+         else f'{_DJAI_CONFIG_FILE_PATH_ENVVAR_NAME}={djai_config_file_path} ')
         + command)
 
     if copy_standard_files:
