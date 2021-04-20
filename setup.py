@@ -18,7 +18,8 @@ setup(
     maintainer_email=metadata.AUTHOR_EMAIL,
     url=metadata.URL,
     download_url=metadata.DOWNLOAD_URL,
-    packages=find_packages(where='src', exclude=(), include=['djai.*']),
+    packages=find_namespace_packages(where='src',
+                                     exclude=(), include=['djai.*']),
     py_modules=[],
     scripts=['src/djai/util/cli/djai',
              'src/djai/util/cli/aws-eb/djai-aws'],
@@ -33,6 +34,5 @@ setup(
     extras_require={},
     python_requires='>= 3.8',
     setup_requires=[],
-    namespace_packages=find_namespace_packages(where='src',
-                                               exclude=(), include=['djai.*'])
+    namespace_packages=[]
 )
