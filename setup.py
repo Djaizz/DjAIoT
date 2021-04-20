@@ -18,7 +18,7 @@ setup(
     maintainer_email=metadata.AUTHOR_EMAIL,
     url=metadata.URL,
     download_url=metadata.DOWNLOAD_URL,
-    packages=find_packages(where='src', exclude=(), include=['djai.*']),
+    packages=find_packages(where='src', exclude=(), include=['*']),
     py_modules=[],
     scripts=['src/djai/util/cli/djai',
              'src/djai/util/cli/aws-eb/djai-aws'],
