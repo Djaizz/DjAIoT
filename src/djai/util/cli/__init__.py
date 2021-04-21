@@ -30,29 +30,42 @@ from .run_cmd import run_command_with_config_file
     envvar=None,
     autocompletion=None)
 @click.argument(
-    'django_admin_args',
+    'django_admin_command',
     cls=click.Argument,
     required=True,
-    type=click.UNPROCESSED,
+    type=str,
     default=None,
     callback=None,
-    nargs=-1,
-    metavar='[DJANGO_ADMIN_CMD] [DJANGO_ADMIN_CMD_ARGS_AND_OPTS]',
+    nargs=None,
+    metavar='DJANGO_ADMIN_COMMAND',
     expose_value=True,
     is_eager=False,
     envvar=None,
     autocompletion=None)
-def admin(djai_config_file_path: str, django_admin_args: tuple):
+@click.argument(
+    'django_admin_args_and_opts',
+    cls=click.Argument,
+    required=False,
+    type=click.UNPROCESSED,
+    default=None,
+    callback=None,
+    nargs=-1,
+    metavar='[DJANGO_ADMIN_CMD_ARGS_AND_OPTS]',
+    expose_value=True,
+    is_eager=False,
+    envvar=None,
+    autocompletion=None)
+def admin(
+        djai_config_file_path: str,
+        django_admin_command: str,
+        django_admin_args_and_opts: tuple):
     """
     DjAI Admin CLI
     """
-    assert django_admin_args, f'*** {django_admin_args} EMPTY ***'
-    django_admin_cmd = django_admin_args[0]
-    django_admin_args_and_opts = django_admin_args[1:]
 
     run_command_with_config_file(
-        command=f'python3 -m django {django_admin_cmd} --settings settings '
-                f"{' '.join(django_admin_args_and_opts)}",
+        command=f'python3 -m django {django_admin_command} --settings settings'
+                f" {' '.join(django_admin_args_and_opts)}",
         djai_config_file_path=djai_config_file_path)
 
 
