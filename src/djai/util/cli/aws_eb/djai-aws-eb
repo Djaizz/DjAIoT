@@ -3,7 +3,7 @@
 
 import argparse
 
-from . import aws_eb_init, aws_eb_deploy
+from djai.util.cli.aws_eb import init, deploy
 
 
 parser = \
@@ -278,10 +278,10 @@ aws_eb_deploy_parser.add_argument(
 args = parser.parse_args()
 
 if args.aws_eb_cmd == 'init':
-    aws_eb_init()
+    init.callback()
 
 elif args.aws_eb_cmd == 'deploy':
-    aws_eb_deploy(
+    deploy.callback(
         djai_config_file_path=args.djai_config_file_path,
         aws_eb_env_name=args.aws_eb_env_name,
         asgi=args.asgi,
