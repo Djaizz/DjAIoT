@@ -5,6 +5,7 @@ __pycache__/
 
 
 # Sphinx Documentation
+doc/_build/
 *.rst
 
 
