@@ -10,7 +10,7 @@ from .aws_eb import djai_aws_eb
     help='DjAI Admin CLI >>>',
     epilog='^^^ DjAI Admin CLI',
     short_help='DjAI Admin CLI',
-    options_metavar='',
+    options_metavar='[OPTIONS]',
     add_help_option=True,
     hidden=False,
     deprecated=False)
@@ -31,7 +31,7 @@ def admin():
     help='DjAI CLI >>>',
     epilog='^^^ DjAI CLI',
     short_help='DjAI CLI',
-    options_metavar='',
+    options_metavar='[OPTIONS]',
     add_help_option=True,
     hidden=False,
     deprecated=False)

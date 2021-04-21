@@ -40,7 +40,7 @@ def init():
     help='DjAI AWS Elastic Beanstalk CLI: Deploy >>>',
     epilog='^^^ DjAI AWS Elastic Beanstalk CLI: Deploy',
     short_help='DjAI AWS-EB Deploy',
-    options_metavar='',
+    options_metavar='[OPTIONS]',
     add_help_option=True,
     hidden=False,
     deprecated=False)
@@ -208,7 +208,7 @@ def deploy(
     help='DjAI AWS Elastic Beanstalk CLI >>>',
     epilog='^^^ DjAI AWS Elastic Beanstalk CLI',
     short_help='DjAI AWS-EB CLI',
-    options_metavar='',
+    options_metavar='[OPTIONS]',
     add_help_option=True,
     hidden=False,
     deprecated=False)
