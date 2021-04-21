@@ -17,7 +17,7 @@ rm $DOC_BUILD_IMAGES_DIR/*
 rm $DOC_BUILD_SOURCES_DIR/*.txt
 
 
-sh $DOC_DIR/parse-docstr.sh
+$DOC_DIR/parse-docstr
 
 
 sphinx-autobuild $DOC_DIR $DOC_BUILD_DIR
