@@ -2,7 +2,6 @@
 
 
 import argparse
-import os
 
 from djai.util.cli.run_cmd import run_command_with_config_file
 
@@ -111,13 +110,7 @@ PARSER.add_argument(
 
 args, extra_args = PARSER.parse_known_intermixed_args()
 
-if args.command in ('init', 'deploy'):
-    os.system(
-        f'djai-aws-eb {args.command} {args.djai_config_file_path} '
-        f"{' '.join(extra_args)}")
-
-else:
-    run_command_with_config_file(
-        command=f'python3 -m django {args.command} --settings settings '
-                f"{' '.join(extra_args)}",
-        djai_config_file_path=args.djai_config_file_path)
+run_command_with_config_file(
+    command=f'python3 -m django {args.command} --settings settings '
+            f"{' '.join(extra_args)}",
+    djai_config_file_path=args.djai_config_file_path)
