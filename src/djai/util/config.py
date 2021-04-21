@@ -11,6 +11,12 @@ from typing import Optional
 
 _DJAI_CONFIG_FILE_PATH_ENVVAR_NAME = 'DJAI_CONFIG_FILE_PATH'
 _DJAI_CONFIG_FILE_NAME = '.config.yml'
+_DJAI_CONFIG_TEMPLATE_FILE_NAME = 'config.yml.template'
+_DJAI_CONFIG_TEMPLATE_FILE_PATH = \
+    str((Path(__file__).parent.parent.parent /
+         _DJAI_CONFIG_TEMPLATE_FILE_NAME).resolve())
+assert os.path.isfile(_DJAI_CONFIG_TEMPLATE_FILE_PATH), \
+    FileNotFoundError(f'*** {_DJAI_CONFIG_TEMPLATE_FILE_PATH} NOT FOUND ***')
 
 
 def parse_config_file(path: Optional[str] = None):
