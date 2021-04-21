@@ -53,7 +53,7 @@ def init():
     callback=None,
     nargs=None,
     metavar='DJAI_CONFIG_FILE_PATH',
-    expose_value=False,
+    expose_value=True,
     is_eager=False,
     envvar=None,
     autocompletion=None)
@@ -66,7 +66,7 @@ def init():
     callback=None,
     nargs=None,
     metavar='AWS_EB_ENV_NAME',
-    expose_value=False,
+    expose_value=True,
     is_eager=False,
     envvar=None,
     autocompletion=None)
@@ -90,7 +90,7 @@ def init():
     callback=None,
     nargs=None,
     metavar='ASGI',
-    expose_value=False,
+    expose_value=True,
     is_eager=False,
     envvar=None)
 @click.option(
@@ -113,7 +113,7 @@ def init():
     callback=None,
     nargs=None,
     metavar='CREATE',
-    expose_value=False,
+    expose_value=True,
     is_eager=False,
     envvar=None)
 def deploy(
