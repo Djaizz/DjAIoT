@@ -12,6 +12,10 @@ import sys
 from recommonmark.parser import CommonMarkParser
 
 import djai
+from djai.util.config import (
+    _DJAI_CONFIG_FILE_PATH_ENVVAR_NAME,
+    _DJAI_CONFIG_TEMPLATE_FILE_PATH
+)
 
 
 # -- Path setup --------------------------------------------------------------
@@ -21,8 +25,10 @@ import djai
 # If the directory is relative to the documentation root,
 # use os.path.abspath to make it absolute, like shown here.
 
-sys.path.insert(0, os.path.abspath(path='../src'))
+os.environ[_DJAI_CONFIG_FILE_PATH_ENVVAR_NAME] = \
+    _DJAI_CONFIG_TEMPLATE_FILE_PATH
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+sys.path.insert(0, os.path.abspath(path='../src'))
 django.setup()
 
 
