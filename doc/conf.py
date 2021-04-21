@@ -52,7 +52,8 @@ extensions = [
     'sphinx.ext.imgconverter',   # reference image converter using Imagemagick
     'sphinx.ext.inheritance_diagram',   # Include inheritance diagrams
     'sphinx.ext.intersphinx',   # Link to other projects’ documentation
-    'sphinx.ext.linkcode',   # Add external links to source code
+    # 'sphinx.ext.linkcode',   # Add external links to source code
+    # TODO: provide linkcode_resolve function
 
     'sphinx.ext.imgmath',   # Render math as images
     'sphinx.ext.mathjax',   # Render math via JavaScript
@@ -84,6 +85,8 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# math renderer
+html_math_renderer = 'mathjax'
 
 
 # Source Parsers
