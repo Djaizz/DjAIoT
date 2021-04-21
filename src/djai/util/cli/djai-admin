@@ -13,9 +13,9 @@ PARSER = \
         usage=None,
             # The string describing the program usage
             # (default: generated from arguments added to parser)
-        description='%(prog)s: Human-First AI Django CLI >>>',
+        description='%(prog)s: DjAI Admin CLI >>>',
             # Text to display before the argument help (default: none)
-        epilog='^^^ %(prog)s: Human-First AI Django CLI\n',
+        epilog='^^^ %(prog)s: DjAI Admin CLI\n',
             # Text to display after the argument help (default: none)
         parents=[],
             # A list of ArgumentParser objects

@@ -13,9 +13,9 @@ parser = \
         usage=None,
             # The string describing the program usage
             # (default: generated from arguments added to parser)
-        description='%(prog)s: Human-First AI AWS Elastic Beanstalk >>>',
+        description='%(prog)s: DjAI AWS Elastic Beanstalk CLI >>>',
             # Text to display before the argument help (default: none)
-        epilog='^^^ %(prog)s: Human-First AI AWS Elastic Beanstalk\n',
+        epilog='^^^ %(prog)s: DjAI AWS Elastic Beanstalk CLI\n',
             # Text to display after the argument help (default: none)
         parents=[],
             # A list of ArgumentParser objects
@@ -83,9 +83,9 @@ aws_eb_init_parser = \
         usage=None,
             # The string describing the program usage
             # (default: generated from arguments added to parser)
-        description='%(prog)s: CLI for Human-First AI AWS EB Init >>>',
+        description='%(prog)s: DjAI AWS Elastic Beanstalk CLI: Init >>>',
             # Text to display before the argument help (default: none)
-        epilog='^^^ %(prog)s: CLI for Human-First AI AWS EB Init\n',
+        epilog='^^^ %(prog)s: DjAI AWS Elastic Beanstalk CLI: Init\n',
             # Text to display after the argument help (default: none)
         parents=[],
             # A list of ArgumentParser objects whose arguments
@@ -121,9 +121,9 @@ aws_eb_deploy_parser = \
         usage=None,
             # The string describing the program usage
             # (default: generated from arguments added to parser)
-        description='%(prog)s: CLI for Human-First AI AWS EB Deploy >>>',
+        description='%(prog)s: DjAI AWS Elastic Beanstalk CLI: Deploy >>>',
             # Text to display before the argument help (default: none)
-        epilog='^^^ %(prog)s: CLI for Human-First AI AWS EB Deploy\n',
+        epilog='^^^ %(prog)s: DjAI AWS Elastic Beanstalk CLI: Deploy\n',
             # Text to display after the argument help (default: none)
         parents=[],
             # A list of ArgumentParser objects
