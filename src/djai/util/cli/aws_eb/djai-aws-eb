@@ -173,7 +173,7 @@ aws_eb_deploy_parser.add_argument(
         # (optionals only).
     help='Path to H1st Django Config File',
         # A brief description of what the argument does.
-    metavar='djai_CONFIG_FILE_PATH',
+    metavar='DJAI_CONFIG_FILE_PATH',
         # A name for the argument in usage messages.
     # dest=None
         # The name of the attribute to be added to the object
