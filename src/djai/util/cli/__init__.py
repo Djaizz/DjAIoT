@@ -27,7 +27,7 @@ def admin():
     invoke_without_command=False,
     no_args_is_help=True,
     subcommand_metavar='DJAI_SUB_COMMAND',
-    chain=True,
+    chain=False,
     help='DjAI CLI >>>',
     epilog='^^^ DjAI CLI',
     short_help='DjAI CLI',

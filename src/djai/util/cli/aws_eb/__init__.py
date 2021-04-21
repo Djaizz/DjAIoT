@@ -204,7 +204,7 @@ def deploy(
     invoke_without_command=False,
     no_args_is_help=True,
     subcommand_metavar='DJAI_AWS_EB_SUB_COMMAND',
-    chain=True,
+    chain=False,
     help='DjAI AWS Elastic Beanstalk CLI >>>',
     epilog='^^^ DjAI AWS Elastic Beanstalk CLI',
     short_help='DjAI AWS-EB CLI',
