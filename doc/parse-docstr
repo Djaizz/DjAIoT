@@ -17,7 +17,8 @@ sphinx-apidoc \
     --separate \
     --implicit-namespaces \
     --module-first \
-    --output-dir $DOC_DIR $MODULE
+    --output-dir $DOC_DIR $MODULE \
+    *migrations*
 
 
 # get rid of undocumented members
