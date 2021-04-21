@@ -7,6 +7,7 @@
 
 from datetime import date
 import djai
+from recommonmark.parser import CommonMarkParser
 
 
 # -- Path setup --------------------------------------------------------------
@@ -84,8 +85,10 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 
-source_suffix = {
-    '.md': 'markdown',
-    '.rst': 'restructuredtext',
-    '.txt': 'markdown'
+
+# Source Parsers
+source_parsers = {
+    '.md': CommonMarkParser
 }
+
+source_suffix = '.md', '.rst'
