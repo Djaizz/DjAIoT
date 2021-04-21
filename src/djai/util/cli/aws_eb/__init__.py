@@ -26,6 +26,10 @@ _PLATFORM_DIR_NAME = '.platform'
     hidden=False,
     deprecated=False)
 def init():
+    """
+    DjAI AWS Elastic Beanstalk CLI: Initialize Configuration
+    """
+
     os.system(command='eb init')
 
 
@@ -117,6 +121,10 @@ def deploy(
         aws_eb_env_name: Optional[str] = None,
         asgi: Optional[str] = None,
         create: bool = False):
+    """
+    DjAI AWS Elastic Beanstalk CLI: Deploy
+    """
+
     configs = yaml.safe_load(stream=open(djai_config_file_path))
     aws_configs = configs['aws']
     profile = aws_configs.get('profile', 'default')
