@@ -5,8 +5,8 @@ from .torch import TorchModel
 
 
 __all__ = [
-    SKLModel,
-    KerasModel,
-    TFModel,
-    TorchModel
+    'SKLModel',
+    'KerasModel',
+    'TFModel',
+    'TorchModel'
 ]

@@ -6,7 +6,7 @@ from ..models import (
 
 
 __all__ = [
-    AIModel,
-    SKLModel,
-    KerasModel, TFModel, TorchModel
+    'AIModel',
+    'SKLModel',
+    'KerasModel', 'TFModel', 'TorchModel'
 ]
