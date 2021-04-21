@@ -299,7 +299,7 @@ elif args.aws_eb_cmd == 'deploy':
     instance_type = aws_configs['instance-type']
     assert region and vpc and subnets
 
-    _aws_eb_cli_util_dir_path = Path(__path__[0]) / 'aws'
+    _aws_eb_cli_util_dir_path = Path(__path__[0]) / 'aws_eb'
 
     assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
     shutil.copytree(

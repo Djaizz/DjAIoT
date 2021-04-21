@@ -113,7 +113,7 @@ args, extra_args = PARSER.parse_known_intermixed_args()
 
 if args.command in ('init', 'deploy'):
     os.system(
-        f'djai-aws {args.command} {args.djai_config_file_path} '
+        f'djai-aws-eb {args.command} {args.djai_config_file_path} '
         f"{' '.join(extra_args)}")
 
 else:
