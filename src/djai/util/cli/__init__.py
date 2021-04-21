@@ -10,20 +10,13 @@ from ..config import (
 from ..git import _GIT_HASH_FILE_NAME, get_git_repo_head_commit_hash
 
 
-_DJAI_UTIL_CLI_STANDARD_FILES_DIR_PATH = \
-    Path(__file__).parent / '_standard_django_files'
+_SERVER_FILES_DIR_PATH = Path(__file__).parent / '_server_files'
 
 _ASGI_PY_FILE_NAME = 'asgi.py'
-_ASGI_PY_FILE_SRC_PATH = \
-    _DJAI_UTIL_CLI_STANDARD_FILES_DIR_PATH / _ASGI_PY_FILE_NAME
+_ASGI_PY_FILE_SRC_PATH = _SERVER_FILES_DIR_PATH / _ASGI_PY_FILE_NAME
 
 _WSGI_PY_FILE_NAME = 'wsgi.py'
-_WSGI_PY_FILE_SRC_PATH = \
-    _DJAI_UTIL_CLI_STANDARD_FILES_DIR_PATH / _WSGI_PY_FILE_NAME
-
-
-_SERVER_PROCFILES_DIR_PATH = \
-    Path(__file__).parent / '_server_procfiles'
+_WSGI_PY_FILE_SRC_PATH = _SERVER_FILES_DIR_PATH / _WSGI_PY_FILE_NAME
 
 _PROCFILE_NAME = 'Procfile'
 
@@ -52,7 +45,7 @@ def run_command_with_config_file(
                 dst=_ASGI_PY_FILE_NAME)
             assert not os.path.exists(path=_PROCFILE_NAME)
             shutil.copyfile(
-                src=(_SERVER_PROCFILES_DIR_PATH /
+                src=(_SERVER_FILES_DIR_PATH /
                      f'{_PROCFILE_NAME}.{asgi.capitalize()}'),
                 dst=_PROCFILE_NAME)
         else:
