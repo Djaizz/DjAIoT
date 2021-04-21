@@ -27,7 +27,7 @@ setup(
     packages=find_namespace_packages(where='src', exclude=(), include=['*']),
     py_modules=[],
     scripts=['src/djai/util/cli/djai',
-             'src/djai/util/cli/aws-eb/djai-aws'],
+             'src/djai/util/cli/aws/djai-aws'],
     classifiers=metadata.CLASSIFIERS,
     license='MIT',
     keywords=metadata.KEYWORDS,
