@@ -1,3 +1,6 @@
+# python.org/dev/peps/pep-0621
+
+
 [project]
 name = "DjAI"
 version = "0.0.0.dev3"
@@ -198,6 +201,7 @@ repository = "GitHub.com/Django-AI/DjAI"
 
 
 [project.scripts]
+djai = "djai.util.cli:djai"
 
 [project.gui-scripts]
 
