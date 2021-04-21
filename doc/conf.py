@@ -55,7 +55,7 @@ extensions = [
 
     'sphinx.ext.imgmath',   # Render math as images
     'sphinx.ext.mathjax',   # Render math via JavaScript
-    'sphinx.ext.jsmath',   # Render math via JavaScript
+    'sphinxcontrib.jsmath',   # Render math via JavaScript
 
     'sphinx.ext.napoleon',   # Support for NumPy and Google style docstrings
     'sphinx.ext.todo',   # Support for todo items
