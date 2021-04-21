@@ -5,19 +5,42 @@ from ruamel import yaml
 import shutil
 from typing import Optional
 
-from .. import run_command_with_config_file, __path__
+from ..run_cmd import run_command_with_config_file
 
 
+_DJAI_AWS_EB_CLI_UTIL_DIR_PATH = Path(__file__).parent
 _EB_EXTENSIONS_DIR_NAME = '.ebextensions'
 _EB_IGNORE_FILE_NAME = '.ebignore'
 _PLATFORM_DIR_NAME = '.platform'
 
 
-def aws_eb_init():
+@click.command(
+    name='init',
+    cls=click.Command,
+    context_settings=None,
+    help='DjAI AWS Elastic Beanstalk CLI: Initialize Configuration >>>',
+    epilog='^^^ DjAI AWS Elastic Beanstalk CLI: Initialize Configuration',
+    short_help='DjAI AWS-EB Init',
+    options_metavar='',
+    add_help_option=True,
+    hidden=False,
+    deprecated=False)
+def init():
     os.system(command='eb init')
 
 
-def aws_eb_deploy(
+@click.command(
+    name='deploy',
+    cls=click.Command,
+    context_settings=None,
+    help='DjAI AWS Elastic Beanstalk CLI: Deploy >>>',
+    epilog='^^^ DjAI AWS Elastic Beanstalk CLI: Deploy',
+    short_help='DjAI AWS-EB Deploy',
+    options_metavar='',
+    add_help_option=True,
+    hidden=False,
+    deprecated=False,)
+def deploy(
         djai_config_file_path: str,
         aws_eb_env_name: Optional[str] = None,
         asgi: Optional[str] = None,
@@ -31,11 +54,9 @@ def aws_eb_deploy(
     instance_type = aws_configs['instance-type']
     assert region and vpc and subnets
 
-    _aws_eb_cli_util_dir_path = Path(__path__[0]) / 'aws_eb'
-
     assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
     shutil.copytree(
-        src=_aws_eb_cli_util_dir_path / _EB_EXTENSIONS_DIR_NAME,
+        src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_EXTENSIONS_DIR_NAME,
         dst=_EB_EXTENSIONS_DIR_NAME,
         symlinks=False,
         ignore=None,
@@ -50,13 +71,13 @@ def aws_eb_deploy(
 
     else:
         shutil.copyfile(
-            src=_aws_eb_cli_util_dir_path / _EB_IGNORE_FILE_NAME,
+            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_IGNORE_FILE_NAME,
             dst=_EB_IGNORE_FILE_NAME)
         assert os.path.isfile(_EB_IGNORE_FILE_NAME)
 
     assert not os.path.exists(path=_PLATFORM_DIR_NAME)
     shutil.copytree(
-        src=_aws_eb_cli_util_dir_path / _PLATFORM_DIR_NAME,
+        src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _PLATFORM_DIR_NAME,
         dst=_PLATFORM_DIR_NAME,
         symlinks=False,
         ignore=None,
@@ -96,28 +117,22 @@ def aws_eb_deploy(
     assert not os.path.exists(path=_PLATFORM_DIR_NAME)
 
 
-@click.command(
+@click.group(
     name='aws-eb',
-    cls=click.Command,
-    context_settings=None,
+    cls=click.Group,
+    commands={'init': init, 'deploy': deploy},
+    invoke_without_command=False,
+    no_args_is_help=True,
+    subcommand_metavar='DJAI_AWS_EB_SUB_COMMAND',
+    chain=True,
     help='DjAI AWS Elastic Beanstalk CLI >>>',
     epilog='^^^ DjAI AWS Elastic Beanstalk CLI',
-    short_help='DjAI AWS-EB',
+    short_help='DjAI AWS-EB CLI',
     options_metavar='',
     add_help_option=True,
     hidden=False,
     deprecated=False)
-@click.argument(
-    'command',
-    cls=click.Argument,
-    required=True,
-    type=str,
-    default=None)
-def djai_aws_eb(command: str):
+def djai_aws_eb():
     """
     DjAI AWS Elastic Beanstalk CLI
     """
-
-
-if __name__ == '__main__':
-    djai_aws_eb()

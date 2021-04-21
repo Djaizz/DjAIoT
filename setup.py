@@ -26,8 +26,7 @@ setup(
     download_url=metadata.DOWNLOAD_URL,
     packages=find_namespace_packages(where='src', exclude=(), include=['*']),
     py_modules=[],
-    scripts=['src/djai/util/cli/djai',
-             'src/djai/util/cli/aws_eb/djai-aws-eb'],
+    scripts=['src/djai/util/cli/aws_eb/djai-aws-eb'],
     classifiers=metadata.CLASSIFIERS,
     license='MIT',
     keywords=metadata.KEYWORDS,
@@ -35,7 +34,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=open('src/requirements.txt').readlines(),
-    entry_points={},
+    entry_points=dict(console_scripts=['djai=djai.util.cli:djai']),
     extras_require={
         'all': [],
 

@@ -4,7 +4,7 @@
 import argparse
 import os
 
-from djai.util.cli import run_command_with_config_file
+from djai.util.cli.run_cmd import run_command_with_config_file
 
 
 PARSER = \
