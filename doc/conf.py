@@ -6,8 +6,12 @@
 
 
 from datetime import date
-import djai
+import django
+import os
+import sys
 from recommonmark.parser import CommonMarkParser
+
+import djai
 
 
 # -- Path setup --------------------------------------------------------------
@@ -16,11 +20,6 @@ from recommonmark.parser import CommonMarkParser
 # add these directories to sys.path here.
 # If the directory is relative to the documentation root,
 # use os.path.abspath to make it absolute, like shown here.
-
-import os
-import sys
-import django
-
 
 sys.path.insert(0, os.path.abspath(path='../src'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
