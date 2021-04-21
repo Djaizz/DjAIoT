@@ -17,9 +17,14 @@ from recommonmark.parser import CommonMarkParser
 # If the directory is relative to the documentation root,
 # use os.path.abspath to make it absolute, like shown here.
 
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+import django
+
+
+sys.path.insert(0, os.path.abspath(path='../src'))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+django.setup()
 
 
 # -- Project information -----------------------------------------------------
