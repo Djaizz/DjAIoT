@@ -16,7 +16,7 @@ class DjAIModelModuleConfig(AppConfig):
     # It defaults to the last component of name.
     # It should be a valid Python identifier.
     # It must be unique across a Django project.
-    label = 'DjAIModel'
+    label = 'AIModel'
 
     # AppConfig.verbose_name
     # Human-readable name for the application, e.g. “Administration”.
