@@ -6,5 +6,6 @@ Poetry >= 1.1.6
   # not installable with pip
 SetUpTools >= 56.0.0
 TOML >= 0.10.2
+Twine >= 3.4.1
 VirtualEnv >= 20.4.4
 Wheel >= 0.36.2

@@ -5,10 +5,11 @@ PyArrow >= 3.0.0
 
 
 # MACHINE LEARNING
-Auto-SKLearn >= 0.12.5; python_version < '3.9'
+Auto-SKLearn >= 0.12.6; python_version < '3.9'
 SciKit-Learn >= 0.24.1
 Keras >= 2.4.3
 Torch >= 1.8.1
+TSLearn >= 0.5.0.5
 
 
 # DJANGO
@@ -18,7 +19,7 @@ Django >= 3.2
 Django-Polymorphic >= 3.0.0
 
 # Django Admin Themes
-Django-Grappelli >= 2.14.4
+Django-Grappelli >= 2.15.1
 Django-Jazzmin >= 2.4.6
 
 # Django-AutoComplete-Light & related
