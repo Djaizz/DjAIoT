@@ -2,6 +2,8 @@
 NumPy >= 1.20.2
 Pandas >= 1.2.4
 PyArrow >= 3.0.0
+PySpark >= 3.1.1
+TSFresh >= 0.18.0
 
 
 # MACHINE LEARNING
