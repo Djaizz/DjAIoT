@@ -13,6 +13,13 @@ Keras >= 2.4.3
 Torch >= 1.8.1
 TSLearn >= 0.5.0.5
 
+# Computer Vision (CV)
+OpenCV-Python >= 4.5.1.48
+ImageAI >= 2.1.6
+
+# Natural Language Processing (NLP)
+Transformers >= 4.5.1
+
 
 # DJANGO
 Django >= 3.2
