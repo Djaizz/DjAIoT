@@ -3,6 +3,7 @@ NumPy >= 1.20.2
 Pandas >= 1.2.4
 PyArrow >= 3.0.0
 PySpark >= 3.1.1
+SciPy >= 1.6.3
 TSFresh >= 0.18.0
 
 
@@ -11,11 +12,13 @@ Auto-SKLearn >= 0.12.6; python_version < '3.9'
 SciKit-Learn >= 0.24.1
 Keras >= 2.4.3
 Torch >= 1.8.1
-TSLearn >= 0.5.0.5
+# TSLearn >= 0.5.0.5
+  # hard to install
 
 # Computer Vision (CV)
 OpenCV-Python >= 4.5.1.48
-ImageAI >= 2.1.6
+# ImageAI >= 2.1.6
+  # hard to install
 
 # Natural Language Processing (NLP)
 Transformers >= 4.5.1
