@@ -1,7 +1,7 @@
 # DATA PROCESSING
 NumPy >= 1.20.2
 Pandas >= 1.2.4
-PyArrow >= 3.0.0
+PyArrow >= 4.0.0
 PySpark >= 3.1.1
 SciPy >= 1.6.3
 TSFresh >= 0.18.0
@@ -9,7 +9,7 @@ TSFresh >= 0.18.0
 
 # MACHINE LEARNING
 Auto-SKLearn >= 0.12.6; python_version < '3.9'
-SciKit-Learn >= 0.24.1
+SciKit-Learn >= 0.24.2
 Keras >= 2.4.3
 Torch >= 1.8.1
 # TSLearn >= 0.5.0.5
@@ -25,7 +25,7 @@ Transformers >= 4.5.1
 
 
 # DJANGO
-Django >= 3.2
+Django >= 3.2.2
 
 # Django Polymorphic Models
 Django-Polymorphic >= 3.0.0
@@ -72,7 +72,7 @@ Django-CORS-Headers >= 3.7.0
 Daphne >= 3.0.2
 Hypercorn >= 0.11.2
 Uvicorn >= 0.13.4
-HTTPTools >= 0.1.1; python_version < '3.9'
+HTTPTools >= 0.2.0; python_version < '3.9'
   # required by Uvicorn
 Uvloop >= 0.15.2
   # required by Uvicorn
