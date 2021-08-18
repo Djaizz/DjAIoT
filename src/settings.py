@@ -52,9 +52,6 @@ INSTALLED_APPS = [
     # CORS Headers
     'corsheaders',
 
-    # Query Profiling
-    'silk',
-
     # DjAI Modules
     'djai.data',
     'djai.model',
@@ -82,8 +79,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'silk.middleware.SilkyMiddleware'
 ]
 
 ROOT_URLCONF = 'urls'
@@ -208,25 +203,3 @@ CORS_ALLOWED_ORIGINS = []
 # Uploads
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10 ** 9   # ~1GB
 FILE_UPLOAD_MAX_MEMORY_SIZE = 0   # save all uploaded files to disk
-
-
-# Silky Query Profiling Settings
-# SILKY_PYTHON_PROFILER = True
-# SILKY_PYTHON_PROFILER_BINARY = True
-
-SILKY_INTERCEPT_PERCENT = 100
-SILKY_MAX_RECORDED_REQUESTS = 10 ** 3
-SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 100
-
-SILKY_MAX_REQUEST_BODY_SIZE = -1   # Silk takes anything < 0 as no limit
-SILKY_MAX_RESPONSE_BODY_SIZE = -1   # If response body > ? kb, ignore
-
-SILKY_META = True
-
-SILKY_STORAGE_CLASS = 'silk.storage.ProfilerResultStorage'
-# SILKY_PYTHON_PROFILER_RESULT_PATH = '/path/to/profiles/'
-
-SILKY_AUTHENTICATION = True   # User must login
-SILKY_AUTHORISATION = True   # User must have permissions
-
-SILKY_ANALYZE_QUERIES = True

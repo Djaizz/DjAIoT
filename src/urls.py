@@ -30,7 +30,4 @@ urlpatterns = [
 
     # REST Framework URLs
     path('api/auth/', include('rest_framework.urls')),
-
-    # Query Profiling URLs
-    path('silk/', include('silk.urls', namespace='silk')),
 ]
