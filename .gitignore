@@ -1,7 +1,8 @@
 # Python
 *.egg-info/
-__pycache__/
 *.pyc
+__pycache__/
+.ropeproject/
 
 
 # Sphinx Documentation
@@ -10,9 +11,4 @@ docs/_build/
 
 
 # Visual Studio Code
-.vscode/
 *.code-workspace
-
-
-# DB files
-*.sqlite3
