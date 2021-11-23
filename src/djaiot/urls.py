@@ -1,0 +1,1 @@
+"""DjAIoT URL configurations."""
