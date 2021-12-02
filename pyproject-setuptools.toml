@@ -109,10 +109,14 @@ Documentation = 'https://Django-AI.GitHub.io/DjAIoT'
 
 [project.dependencies]
 
+# DJAI
+# ====
+DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
+
 
 [build-system]
 requires = [
-  'SetUpTools >= 59.2.0',
+  'SetUpTools >= 59.4.0',
   'Wheel >= 0.37.0'
 ]
 build-backend = 'setuptools.build_meta'

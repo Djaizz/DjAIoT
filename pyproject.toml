@@ -106,8 +106,7 @@ packages = [
   {include = 'djaiot', from = 'src'}
 ]
 
-include = [
-]
+include = []
 exclude = []
 
 
@@ -116,6 +115,11 @@ exclude = []
 # PYTHON
 # ======
 Python = '^3.8'
+
+
+# DJAI
+# ====
+# DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
 
 
 [tool.poetry.urls]
