@@ -119,7 +119,7 @@ Python = '^3.8'
 
 # DJAI
 # ====
-# DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
+DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
 
 
 [tool.poetry.urls]
@@ -127,5 +127,7 @@ GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
 
 
 [build-system]
-requires = ['Poetry-Core >= 1.0.7']
+requires = [
+  'Poetry-Core >= 1.0.7'
+]
 build-backend = 'poetry.core.masonry.api'
