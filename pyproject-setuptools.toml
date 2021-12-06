@@ -109,9 +109,11 @@ Documentation = 'https://Django-AI.GitHub.io/DjAIoT'
 
 [project.dependencies]
 
-# DJAI
-# ====
+# DjAI & related utilities
+# ========================
 DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
+Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
+DjUtil = {url = 'https://GitHub.com/Django-AI/DjUtil/archive/main.zip'}
 
 
 [build-system]
