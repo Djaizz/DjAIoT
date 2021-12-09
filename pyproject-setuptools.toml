@@ -37,7 +37,6 @@ classifiers = [
   'Environment :: Win32 (MS Windows)',
   'Framework :: Dash',
   'Framework :: Django',
-  'Framework :: Django :: 3.2',
   'Framework :: Django :: 4.0',
   'Framework :: IPython',
   'Framework :: Jupyter',
