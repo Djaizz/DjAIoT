@@ -115,12 +115,9 @@ exclude = []
 # ======
 Python = '^3.8'
 
-
-# DjAI & related utilities
-# ========================
+# DjAI
+# ====
 DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
-Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
-DjUtil = {url = 'https://GitHub.com/Django-AI/DjUtil/archive/main.zip'}
 
 
 [tool.poetry.urls]
