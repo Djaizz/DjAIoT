@@ -7,5 +7,10 @@ __pycache__/
 .ropeproject/
 
 
+# Sphinx Documention
+docs/_build/
+docs/*.rst
+
+
 # Visual Studio Code
 *.code-workspace
