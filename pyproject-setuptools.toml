@@ -27,6 +27,9 @@ keywords = [
   'Internet-of-Things',
   'I.o.T.',
   'IoT',
+
+  'application',
+  'app',
 ]
 classifiers = [
   'Development Status :: 3 - Alpha',
@@ -76,7 +79,6 @@ classifiers = [
   'Topic :: Home Automation',
   'Topic :: Scientific/Engineering',
   'Topic :: Scientific/Engineering :: Artificial Intelligence',
-  'Topic :: Scientific/Engineering :: Astronomy',
   'Topic :: Scientific/Engineering :: Atmospheric Science',
   'Topic :: Scientific/Engineering :: Bio-Informatics',
   'Topic :: Scientific/Engineering :: Chemistry',
@@ -115,7 +117,7 @@ DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
 
 [build-system]
 requires = [
-  'SetUpTools >= 60.1.0',
+  'SetUpTools >= 60.3.1',
   'Wheel >= 0.37.1',
 ]
 build-backend = 'setuptools.build_meta'

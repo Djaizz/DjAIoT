@@ -30,6 +30,9 @@ keywords = [
   'Internet-of-Things',
   'I.o.T.',
   'IoT',
+
+  'application',
+  'app',
 ]
 classifiers = [
   'Development Status :: 3 - Alpha',
@@ -79,7 +82,6 @@ classifiers = [
   'Topic :: Home Automation',
   'Topic :: Scientific/Engineering',
   'Topic :: Scientific/Engineering :: Artificial Intelligence',
-  'Topic :: Scientific/Engineering :: Astronomy',
   'Topic :: Scientific/Engineering :: Atmospheric Science',
   'Topic :: Scientific/Engineering :: Bio-Informatics',
   'Topic :: Scientific/Engineering :: Chemistry',
@@ -127,11 +129,5 @@ GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
 [build-system]
 requires = [
   'Poetry-Core >= 1.0.7',
-
-  # *** TEMP FIX for SetUpTools-related bug ***
-  # github.com/pypa/pip/issues/10743#issuecomment-998321115
-  # github.com/python-poetry/poetry/issues/3153#issuecomment-727196619
-  # github.com/python-poetry/poetry/issues/4915#issuecomment-999449889
-  'SetUpTools >= 60.1.0',
 ]
 build-backend = 'poetry.core.masonry.api'
