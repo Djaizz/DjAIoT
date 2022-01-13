@@ -1,1 +1,1 @@
-"""DjAIoT Device Health module: Migrations."""
+"""DjAIoT Device Health module: database migrations."""

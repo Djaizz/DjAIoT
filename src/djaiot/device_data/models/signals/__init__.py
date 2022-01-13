@@ -1,4 +1,4 @@
-"""DjAIoT Device Data module: admin."""
+"""DjAIoT Device Data module: object models: database signals."""
 
 
 from sys import version_info
