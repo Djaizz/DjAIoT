@@ -5,11 +5,11 @@ from sys import version_info
 
 from model_utils.models import TimeStampedModel
 
+from djaiot.device_data.apps import DjAIoTDeviceDataModuleConfig
+
 from djutil.models import (PGSQL_IDENTIFIER_MAX_LEN,
                            _ModelWithSnakeCaseUniqueNameABC,
                            modify_abstract_model_field_attrs)
-
-from djaiot.device_data.apps import DjAIoTDeviceDataModuleConfig
 
 from .json_info import JSONInfo
 
@@ -17,6 +17,9 @@ if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
+
+
+__all__: Sequence[str] = ('DeviceClass',)
 
 
 @modify_abstract_model_field_attrs(name=dict(verbose_name='Device Class'))
