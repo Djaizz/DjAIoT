@@ -1,1 +1,1 @@
-"""DjAIoT Device Performance module: migrations."""
+"""DjAIoT Device Performance module: database migrations."""
