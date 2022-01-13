@@ -1,1 +1,1 @@
-"""DjAIoT Device Health module: Models."""
+"""DjAIoT Device Health module: object models."""

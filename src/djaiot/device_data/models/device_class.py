@@ -1,4 +1,4 @@
-"""DjAIoT Device Class model."""
+"""DjAIoT Device Class object model."""
 
 
 from sys import version_info
@@ -40,13 +40,13 @@ class DeviceClass(_ModelWithSnakeCaseUniqueNameABC,
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" TOO LONG ***')
 
-        default_related_name = 'device_classes'
+        default_related_name: str = 'device_classes'
 
     class JSONAPIMeta:
         """JSON API Metadata."""
 
-        resource_name = (f'{__module__}.'
-                         f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
+        resource_name: str = (f'{__module__}.'
+                              f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
 
     @staticmethod
     def search_fields() -> Sequence[str]:
