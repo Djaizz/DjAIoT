@@ -128,6 +128,6 @@ GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
 
 [build-system]
 requires = [
-  'Poetry-Core >= 1.0.7',
+  'Poetry-Core >= 1.0.8',
 ]
 build-backend = 'poetry.core.masonry.api'
