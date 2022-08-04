@@ -5,7 +5,7 @@ version = '0.0.0.dev0'
 description = 'Artificial Intelligence (AI) in Internet-of-Things Applications based on Django'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
 
-requires-python = '>= 3.8, < 3.11'
+requires-python = '>= 3.8'
 
 license = {file = 'LICENSE'}
 
@@ -101,6 +101,13 @@ classifiers = [
 ]
 
 
+dependencies = [
+  # DjAI
+  # ====
+  # 'https://GitHub.com/Django-AI/DjAI/archive/main.zip',
+]
+
+
 [project.urls]
 Homepage = 'https://GitHub.com/Django-AI/DjAIoT'
 Repository = 'https://GitHub.com/Django-AI/DjAIoT'
@@ -108,16 +115,9 @@ GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
 Documentation = 'https://Django-AI.GitHub.io/DjAIoT'
 
 
-[project.dependencies]
-
-# DjAI
-# ====
-DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
-
-
 [build-system]
 requires = [
-  'SetUpTools >= 63.2.0',
+  'SetUpTools >= 63.4.1',
   'Wheel >= 0.37.1',
 ]
 build-backend = 'setuptools.build_meta'
