@@ -119,7 +119,7 @@ exclude = []
 python = '>= 3.8.1, != 3.9.7, < 3.12'
   # >= 3.8.1 for Flake8
   # != 3.9.7 for Streamlit
-djai = {url = 'https://GitHub.com/Djaizz/Djaizz/archive/main.zip'}
+djaizz = {url = 'https://GitHub.com/Djaizz/Djaizz/archive/main.zip'}
 
 
 [tool.poetry.group.build]
