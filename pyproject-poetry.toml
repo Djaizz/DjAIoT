@@ -1,20 +1,26 @@
-[project]
+# python-poetry.org/docs/pyproject
+
+
+[tool.poetry]
 name = 'DjAIoT'
-version = '0.0.0.dev0'
+version = '0.0.0.a0'
 
-description = 'Artificial Intelligence (AI) in Internet-of-Things Applications based on Django'
-readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
+description = 'Artificial Intelligence (AI) in Internet-of-Things (IoT) Applications based on Django'
 
-requires-python = '>= 3.8, < 3.11'
-
-license = {file = 'LICENSE'}
+license = 'MIT'
 
 authors = [
-  {name = 'STEAM for Vietnam Foundation: AI & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
+  'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
 ]
 maintainers = [
-  {name = 'STEAM for Vietnam Foundation: AI & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
+  'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
 ]
+
+readme = 'README.md'
+
+homepage = 'https://GitHub.com/Djaizz/DjAIoT'
+repository = 'https://GitHub.com/Djaizz/DjAIoT'
+documentation = 'https://Djaizz.GitHub.io/DjAIoT'
 
 keywords = [
   'Django',
@@ -31,6 +37,7 @@ keywords = [
   'application',
   'app',
 ]
+
 classifiers = [
   'Development Status :: 3 - Alpha',
   # 'Development Status :: 4 - Beta',
@@ -100,24 +107,101 @@ classifiers = [
   'Topic :: Software Development :: Widget Sets',
 ]
 
+packages = [
+  {include = 'djaiot', from = 'src'}
+]
 
-[project.urls]
-Homepage = 'https://GitHub.com/Django-AI/DjAIoT'
-Repository = 'https://GitHub.com/Django-AI/DjAIoT'
-GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
-Documentation = 'https://Django-AI.GitHub.io/DjAIoT'
+include = []
+exclude = []
 
 
-[project.dependencies]
+[tool.poetry.dependencies]
+python = '>= 3.8.1, != 3.9.7, < 3.12'
+  # >= 3.8.1 for Flake8
+  # != 3.9.7 for Streamlit
+djai = {url = 'https://GitHub.com/Djaizz/Djaizz/archive/main.zip'}
 
-# DjAI
-# ====
-DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/main.zip'}
+
+[tool.poetry.group.build]
+optional = true
+
+[tool.poetry.group.build.dependencies]
+build = {version = ">=0.10.0", optional = true}
+
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+commitizen = {version = ">=2.42.1", optional = true}
+pre-commit = {version = ">=3.1.1", optional = true}
+
+
+[tool.poetry.group.doc]
+optional = true
+
+[tool.poetry.group.doc.dependencies]
+sphinx = {version = ">=6.1.3", optional = true}
+sphinx-autobuild = {version = ">=2021.3.14", optional = true}
+sphinxcontrib-jsmath = {version = ">=1.0.1", optional = true}
+commonmark = {version = ">=0.9.1", optional = true}
+recommonmark = {version = ">=0.7.1", optional = true}
+
+
+[tool.poetry.group.lint]
+optional = true
+
+[tool.poetry.group.lint.dependencies]
+bandit = {version = ">=1.7.4", optional = true}
+flake8 = {version = ">=6.0.0", optional = true}
+mypy = {version = ">=1.0.0", optional = true}
+pycodestyle = {version = ">=2.10.0", optional = true}
+pydocstyle = {version = ">=6.3.0", optional = true}
+pylama = {version = ">=8.4.1", optional = true}
+pylint = {version = ">=2.16.1", optional = true}
+
+
+[tool.poetry.group.publish]
+optional = true
+
+[tool.poetry.group.publish.dependencies]
+twine = {version = ">=4.0.2", optional = true}
+
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+nose = {version = ">=1.3.7", optional = true}
+nose2 = {version = ">=0.12.0", optional = true}
+pytest = {version = ">=7.2.1", optional = true}
+pytest-cov = {version = ">=4.0.0", optional = true}
+unittest2 = {version = ">=1.1.0", optional = true}
+
+
+[tool.poetry.extras]
+# python-poetry.org/docs/pyproject#extras
+# The dependencies specified for each extra must already be defined as project dependencies
+# Dependencies listed in dependency groups cannot be specified as extras
+build = []
+dev = []
+doc = []
+lint = []
+publish = []
+test = []
+
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."blogtool.parsers"]
+
+
+[tool.poetry.urls]
+GitHub = 'https://GitHub.com/Djaizz/DjAIoT'
 
 
 [build-system]
 requires = [
-  'SetUpTools >= 60.5.0',
-  'Wheel >= 0.37.1',
+  'Poetry-Core >= 1.5.1',
 ]
-build-backend = 'setuptools.build_meta'
+build-backend = 'poetry.core.masonry.api'

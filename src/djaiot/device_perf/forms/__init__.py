@@ -1,10 +1,7 @@
-"""DjAIoT Device Data module: object models."""
+"""DjAIoT Device Performance module: forms."""
 
 
 from sys import version_info
-
-from .json_info import JSONInfo
-from .device_class import DeviceClass
 
 if version_info >= (3, 9):
     from collections.abc import Sequence
@@ -13,6 +10,4 @@ else:
 
 
 __all__: Sequence[str] = (
-    'JSONInfo',
-    'DeviceClass',
 )

@@ -1,23 +1,9 @@
-[tool.poetry]
+# python.org/dev/peps/pep-0621
+# setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
+
+[project]
 name = 'DjAIoT'
-version = '0.0.0.dev0'
-
-description = 'Artificial Intelligence (AI) in Internet-of-Things Applications based on Django'
-
-license = 'MIT'
-
-authors = [
-  'STEAM for Vietnam Foundation AI & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
-]
-maintainers = [
-  'STEAM for Vietnam Foundation AI & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
-]
-
-readme = 'README.md'
-
-homepage = 'https://GitHub.com/Django-AI/DjAIoT'
-repository = 'https://GitHub.com/Django-AI/DjAIoT'
-documentation = 'https://Django-AI.GitHub.io/DjAIoT'
 
 keywords = [
   'Django',
@@ -34,100 +20,107 @@ keywords = [
   'application',
   'app',
 ]
-classifiers = [
-  'Development Status :: 3 - Alpha',
-  # 'Development Status :: 4 - Beta',
-  # 'Development Status :: 5 - Production/Stable',
-  # 'Development Status :: 6 - Mature',
-  'Environment :: MacOS X',
-  'Environment :: Win32 (MS Windows)',
-  'Framework :: Dash',
-  'Framework :: Django',
-  'Framework :: Django :: 4.0',
-  'Framework :: IPython',
-  'Framework :: Jupyter',
-  'Framework :: Jupyter :: JupyterLab',
-  'Framework :: Jupyter :: JupyterLab :: 4',
-  'Framework :: Kedro',
-  'Framework :: Matplotlib',
-  'Intended Audience :: Developers',
-  'Intended Audience :: Education',
-  'Intended Audience :: Financial and Insurance Industry',
-  'Intended Audience :: Healthcare Industry',
-  'Intended Audience :: Information Technology',
-  'Intended Audience :: Legal Industry',
-  'Intended Audience :: Manufacturing',
-  'Intended Audience :: Science/Research',
-  'Intended Audience :: System Administrators',
-  'Intended Audience :: Telecommunications Industry',
-  'Operating System :: MacOS',
-  'Operating System :: MacOS :: MacOS X',
-  'Operating System :: Microsoft',
-  'Operating System :: Microsoft :: Windows',
-  'Operating System :: Microsoft :: Windows :: Windows 7',
-  'Operating System :: Microsoft :: Windows :: Windows 8',
-  'Operating System :: Microsoft :: Windows :: Windows 8.1',
-  'Operating System :: Microsoft :: Windows :: Windows 10',
-  'Operating System :: OS Independent',
-  'Operating System :: Other OS',
-  'Operating System :: POSIX',
-  'Operating System :: POSIX :: Linux',
-  'Programming Language :: Python',
-  'Programming Language :: Python :: 3',
-  'Programming Language :: Python :: 3.8',
-  'Programming Language :: Python :: 3.9',
-  'Programming Language :: Python :: 3.10',
-  'Programming Language :: Python :: 3.11',
-  'Topic :: Education',
-  'Topic :: Home Automation',
-  'Topic :: Scientific/Engineering',
-  'Topic :: Scientific/Engineering :: Artificial Intelligence',
-  'Topic :: Scientific/Engineering :: Atmospheric Science',
-  'Topic :: Scientific/Engineering :: Bio-Informatics',
-  'Topic :: Scientific/Engineering :: Chemistry',
-  'Topic :: Scientific/Engineering :: GIS',
-  'Topic :: Scientific/Engineering :: Human Machine Interfaces',
-  'Topic :: Scientific/Engineering :: Hydrology',
-  'Topic :: Scientific/Engineering :: Image Processing',
-  'Topic :: Scientific/Engineering :: Image Recognition',
-  'Topic :: Scientific/Engineering :: Information Analysis',
-  'Topic :: Scientific/Engineering :: Mathematics',
-  'Topic :: Scientific/Engineering :: Medical Science Apps.',
-  'Topic :: Scientific/Engineering :: Physics',
-  'Topic :: Scientific/Engineering :: Visualization',
-  'Topic :: Software Development',
-  'Topic :: Software Development :: Libraries',
-  'Topic :: Software Development :: Libraries :: Application Frameworks',
-  'Topic :: Software Development :: Libraries :: Python Modules',
-  'Topic :: Software Development :: User Interfaces',
-  'Topic :: Software Development :: Widget Sets',
+
+readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
+
+requires-python = '>= 3.8'
+
+license = {file = 'LICENSE'}
+
+authors = [
+  {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
+]
+maintainers = [
+  {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
 ]
 
-packages = [
-  {include = 'djaiot', from = 'src'}
+
+dynamic = [
+  'version',
+
+  'description',
+
+  'classifiers',
+
+  'dependencies',
+  'optional-dependencies',
+
+  'entry-points',
 ]
 
-include = []
+
+[project.urls]
+Homepage = 'https://GitHub.com/Djaizz/DjAIoT'
+Repository = 'https://GitHub.com/Djaizz/DjAIoT'
+GitHub = 'https://GitHub.com/Djaizz/DjAIoT'
+Documentation = 'https://Djaizz.GitHub.io/DjAIoT'
+
+
+[tool.setuptools]
+# setuptools.pypa.io/en/latest/userguide/pyproject_config.html#setuptools-specific-configuration
+
+# platforms = []  # array
+
+zip-safe = true
+
+# eager-resources = []  # array
+
+py-modules = []
+
+# packages = []  # array or find directive
+
+# package-dir = {}  # table/inline-table, used when explicitly listing packages
+
+# namespace-packages = []  # array, deprecated
+
+package-data = {}  # table/inline-table
+
+include-package-data = true
+
+exclude-package-data = {}  # table/inline-table
+
+license-files = ['LICEN[CS]E*']  # array of glob patterns
+
+data-files = {}  # table/inline-table, discouraged
+
+# script-files = []  # array, deprecated
+
+provides = []  # array, ignored by pip
+
+obsoletes = []  # array, ignored by pip
+
+
+[tool.setuptools.packages.find]
+where = ['src']
+include = ['*']
 exclude = []
+namespaces = true
 
 
-[tool.poetry.dependencies]
+[tool.setuptools.dynamic]
+version = {file = 'metadata/version'}
 
-# PYTHON
-# ======
-Python = '>= 3.8, < 3.11'
+description = {file = 'metadata/description'}
 
-# DjAI
-# ====
-DjAI = {url = 'https://GitHub.com/Django-AI/DjAI/archive/dev.zip'}
+classifiers = {file = 'metadata/classifiers'}
+
+dependencies = {file = 'metadata/requirements/base.txt'}
+
+entry-points = {file = 'metadata/entry-points'}
 
 
-[tool.poetry.urls]
-GitHub = 'https://GitHub.com/Django-AI/DjAIoT'
+[tool.setuptools.dynamic.optional-dependencies]
+build = {file = 'metadata/requirements/build.txt'}
+dev = {file = 'metadata/requirements/dev.txt'}
+doc = {file = 'metadata/requirements/doc.txt'}
+lint = {file = 'metadata/requirements/lint.txt'}
+publish = {file = 'metadata/requirements/publish.txt'}
+test = {file = 'metadata/requirements/test.txt'}
 
 
 [build-system]
 requires = [
-  'Poetry-Core >= 1.0.7',
+  'SetUpTools >= 67.4.0',
+  'Wheel >= 0.38.4',
 ]
-build-backend = 'poetry.core.masonry.api'
+build-backend = 'setuptools.build_meta'

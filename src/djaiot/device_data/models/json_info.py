@@ -2,13 +2,22 @@
 
 
 from json import JSONDecoder
+from sys import version_info
 
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields.json import JSONField
 
+from djaiot.device_data.apps import DjAIoTDeviceDataModuleConfig
+
 from djutil.models import PGSQL_IDENTIFIER_MAX_LEN, _ModelWithUUIDPKABC
 
-from djaiot.device_data.apps import DjAIoTDeviceDataModuleConfig
+if version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+
+__all__: Sequence[str] = ('JSONInfo',)
 
 
 class JSONInfo(_ModelWithUUIDPKABC):
