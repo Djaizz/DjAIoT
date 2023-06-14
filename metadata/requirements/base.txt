@@ -1,1 +1,1 @@
-Djaizz >= 23.6.14.0
+Djaizz @ https://GitHub.com/Djaizz/Djaizz/archive/main.zip
